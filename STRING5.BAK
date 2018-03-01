@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+char a[40],ch; int i=0,l;
+clrscr();
+printf("enter the string :\n");
+gets(a);
+l=strlen(a);
+while(i<(l/2))
+{
+ch=a[i];
+a[i]=a[l-1-i];
+a[l-1-i]=ch;i++;}
+puts(a);
+getch();
+}

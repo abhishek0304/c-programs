@@ -1,0 +1,20 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int n=0;
+char st[90];
+cout<<"Enter string";
+gets(st1);
+for(i=0;i<'/0';i++)
+n++
+for(i=o,j=n-1;i<'/0';i++,j++)
+{
+st[i]=st[j];
+st[j]=st[k];
+st[k]=st[i];
+}
+cout<<"reversed: "<<st;
+getch();
+}

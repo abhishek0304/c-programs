@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i=0,j,len;
+char a[50],b[50];
+printf("Enter the string...\n");
+gets(a);
+while(a[i]!='\0')
+{
+b[j]=a[i];
+i++;
+len=i;
+}
+printf("the length of string is %d",len);
+getch();
+}
