@@ -1,0 +1,791 @@
+//investigatory project
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<fstream.h>
+#include<stdio.h>
+#include<dos.h>
+#include<process.h>
+class BMS
+{ public:
+
+  void welcome();
+  void choice();
+  void movie();
+  void concert();
+  void planet();
+  void selseat();
+  void concticket();
+  void fileprocess();
+  void finalticket();
+};
+
+BMS obj;
+
+void BMS::welcome()
+{
+ clrscr();
+ gotoxy(31,12);
+ cout<<"Welcome to BOOK MY SHOW";
+ delay(1000);
+ obj.choice();
+}
+
+
+void BMS::choice()
+{
+ clrscr();
+
+ cout<<"\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~ Choose what you wanna do? ~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+ cout<<"\n 1. Book ticket for Movie                            DHAMAKA OFFER AVAILABLE!!!"<<endl;
+ cout<<"\n 2. Buy a ticket for Gandhi Planetarium"<<endl;
+ cout<<"\n 3. Buy a ticket for Diljit Dosanjh's concert"<<endl;
+ cout<<"\n 4. Exit"<<endl;
+ cout<<"\nEnter your choice : ";
+ int cho;
+ cin>>cho;
+
+ if(cho==1)
+   {
+     obj.movie();
+   }
+
+ else if(cho==2)
+   {
+     obj.planet();
+   }
+
+ else if(cho==3)
+   {
+    obj.concert();
+   }
+
+ else if(cho==4)
+   {
+    clrscr();
+
+    cout<<"\n\n";
+    cout<<"================================================================================";
+    cout<<"\n\t                Are you sure you wanna leave??(Y/N) ?";
+    cout<<"\n================================================================================";
+    cout<<"Enter your choice : ";
+    char selectexit;
+    cin>>selectexit;
+
+    if(selectexit=='Y'||selectexit=='y')
+      {
+	clrscr();
+	cout<<"\n\n_________________________________Have a nice day!!______________________________";
+	cout<<"\nExiting.";
+	delay(800);
+	cout<<".";
+	delay(800);
+	cout<<".";
+	delay(800);
+	cout<<".";
+	exit(0);
+      }
+
+    if(selectexit=='N'||selectexit=='n')
+      {
+	obj.welcome();
+      }
+   }
+
+ else
+   {
+     cout<<"\n\n\n Sorry!! Wrong choice! Please retry";
+
+   getch();
+
+     obj.choice();
+   }
+}
+
+
+void BMS::movie()
+{
+ clrscr();
+
+ cout<<"\n\n";
+ cout<<"\t"<<"      *   *                                                  "<<endl;
+ cout<<"\t"<<"     * * * *      *******  *       *  *******  ******  ******"<<endl;
+ cout<<"\t"<<"    *   *   *     *     *   *     *      *     *       *     "<<endl;
+ cout<<"\t"<<"   *    *    *    *     *    *   *       *     ******  ******"<<endl;
+ cout<<"\t"<<"  *           *   *     *     * *        *     *            *"<<endl;
+ cout<<"\t"<<" *             *  *******      *      *******  ******  ******"<<endl;
+
+ cout<<"\n \n \t 1. Aksar 2 \t(Rs. 50)\n \t 2. Chef \t(Rs. 180) \n \t 3. Mangal Ho \t(Rs. 120) \n \t 4. Spyder \t(Rs. 80) \n \t 5. Bhoomi \t(Rs. 200) \n \t 6. Simran \t(Rs. 90) \n \t 7. Poster Boys (Rs. 110) \n \t 8. Baadshaho \t(Rs. 70) \n \t 9. A Gentleman (Rs. 120)";
+
+ cout<<" \n \n Enter the serial number of the movie you wanna see : ";
+
+ int moviecho;
+ cin>>moviecho;
+
+ if(moviecho==1)
+   {
+     cout<<"\n\n You chose AKSAR 2... \n Wanna proceed? (Y/N) : ";
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+       clrscr();
+
+       cout<<"\t ............................AKSAR 2............................";
+       cout<<"\n\n\t Please enter the following details :--";
+
+       obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+       clrscr();
+       obj.movie();
+      }
+   }
+
+
+ if(moviecho==2)
+   {
+     cout<<"\n\n You chose CHEF... \n Wanna proceed? (Y/N) : ";
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+       clrscr();
+
+       cout<<"\t .............................CHEF.............................";
+       cout<<"\n\n\t Please enter the following details :--";
+
+       obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+       clrscr();
+
+       obj.movie();
+      }
+   }
+
+
+ if(moviecho==3)
+   {
+     cout<<"\n\n You chose MANGAL HO... \n Wanna proceed? (Y/N) : ";
+
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ...........................MANGAL HO...........................";
+	cout<<"\n\n\t Please enter the following details :--";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+
+	obj.movie();
+      }
+   }
+
+
+ if(moviecho==4)
+   {
+     cout<<"\n\n You chose SPYDER... \n Wanna proceed? (Y/N) : ";
+     char ans;
+     cin>>ans;
+
+    if(ans=='Y'||ans=='y')
+     {
+       clrscr();
+
+       cout<<"\t ............................SPYDER............................";
+       cout<<"\n\n\t Please enter the following details :--";
+
+       obj.selseat();
+     }
+
+    if(ans=='N'||ans=='n')
+     {
+       clrscr();
+       obj.movie();
+     }
+   }
+
+
+ if(moviecho==5)
+   {
+     cout<<"\n\n You chose BHOOMI... \n Wanna proceed? (Y/N) : ";
+
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ............................BHOOMI............................";
+	cout<<"\n\n\t Please enter the following details :--";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+
+	obj.movie();
+      }
+   }
+
+
+ if(moviecho==6)
+   {
+     cout<<"\n\n You chose SIMRAN... \n Wanna proceed? (Y/N) : ";
+
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ............................SIMRAN............................";
+	cout<<"\n\n\t Please enter the following details :--";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+
+	obj.movie();
+      }
+   }
+
+
+ if(moviecho==7)
+   {
+     cout<<"\n\n You chose POSTER BOYS... \n Wanna proceed? (Y/N) : ";
+
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ..........................POSTER BOYS..........................";
+	cout<<"\n\n\t Please enter the following details :==";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+
+	obj.movie();
+      }
+   }
+
+
+ if(moviecho==8)
+   {
+     cout<<"\n\n You chose BAADSHAHO... \n Wanna proceed? (Y/N) : ";
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ...........................BAADSHAHO...........................";
+	cout<<"\n\n\t Please enter the following details :--";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+	obj.movie();
+      }
+   }
+
+
+ if(moviecho==9)
+   {
+     cout<<"\n\n You chose A GENTLEMEN... \n Wanna proceed? (Y/N) : ";
+
+     char ans;
+     cin>>ans;
+
+     if(ans=='Y'||ans=='y')
+      {
+	clrscr();
+
+	cout<<"\t ..........................A GENTLEMAN..........................";
+	cout<<"\n\n\t Please enter the following details :--";
+
+	obj.selseat();
+      }
+
+     if(ans=='N'||ans=='n')
+      {
+	clrscr();
+
+	obj.movie();
+      }
+   }
+
+}
+
+void BMS::planet()
+{
+  clrscr();
+
+  cout<<"\n\n\t /////////////////|^| WELCOME TO GANDHI PLANETARIUM|^| ///////////////// \n\n";
+  cout<<"\n\t   How many tickets do you wanna buy? (cost per ticket - Rs 120)\n";
+  cout<<"Enter no. of tickets : ";
+  int ticketno,totcost;
+  cin>>ticketno;
+
+  totcost=120*ticketno;
+  cout<<"\n\n\t   The total cost of ticket(s) is - Rs "<<totcost;
+
+  cout<<"\n\t   Wanna proceed? (Y/N) : ";
+
+  char proceed;
+  cin>>proceed;
+
+  if(proceed=='y'||proceed=='Y')
+   {
+     clrscr();
+
+     cout<<"\n\t   Please enter the following details:--";
+
+     for(int i=0;i<ticketno;i++)
+     obj.concticket();
+   }
+
+  if(proceed=='n'||proceed=='N')
+   {
+     obj.choice();
+   }
+
+}
+
+void BMS::concert()
+{
+  clrscr();
+
+  cout<<"\n";
+  cout<<"======================= Hurry!!! Grab Concert Ticket Now!! =======================";
+  cout<<"\n\n Which ticket do you want?";
+  cout<<"\n 1.VVIP Ticket       (cost Rs 5600)  \t Applicable for first row... ";
+  cout<<"\n 2.VIP Ticket        (cost Rs 3400)   \t Applicable for second to fourth row...";
+  cout<<"\n 3.Regular Ticket    (cost Rs 1699)\n";
+  cout<<"\nEnter your choice : ";
+
+  int tcho;
+  cin>>tcho;
+
+  if(tcho==1)
+   {
+     clrscr();
+     cout<<"\n\t You chose VVIP Ticket... \n Wanna proceed?(Y/N) : ";
+
+     char proc;
+     cin>>proc;
+
+     if(proc=='Y'||proc=='y')
+      {
+	clrscr();
+
+	cout<<"\n\t How many tickets do you want to book ? : ";
+
+	int noofticket;
+	cin>>noofticket;
+
+	cout<<"\n You want "<<noofticket<<" tickets";
+
+	int sumticket;
+	sumticket=noofticket*5600;
+	cout<<"\n\n Total payable amount = Rs "<<sumticket;
+
+	cout<<"\n\t Proceed further ?(Y/N) : ";
+
+	char proceedny;
+	cin>>proceedny;
+
+	if(proceedny=='y'||proceedny=='Y')
+	 {
+	   for(int i=0;i<noofticket;i++)
+	   obj.concticket();
+	 }
+
+	if(proceedny=='n'||proceedny=='N')
+	 {
+	   obj.choice();
+	 }
+      }
+
+     if(proc=='N'||proc=='n')
+      {
+	obj.choice();
+      }
+   }
+
+  if(tcho==2)
+   {
+     clrscr();
+     cout<<"\n\t You chose VIP Ticket... \n Wanna proceed?(Y/N) : ";
+
+     char proc;
+     cin>>proc;
+
+     if(proc=='Y'||proc=='y')
+      {
+	clrscr();
+	cout<<"\n\t How many tickets do you want ? : ";
+
+	int noofticket;
+	cin>>noofticket;
+	cout<<"\n You want "<<noofticket<<" tickets";
+
+	int sumticket;
+	sumticket=noofticket*3400;
+	cout<<"\n\n Total payable amount = Rs "<<sumticket;
+
+	cout<<"\n\t Proceed further ???(y/n) : ";
+
+	char proceedny;
+	cin>>proceedny;
+
+	if(proceedny=='y'||proceedny=='Y')
+	 {
+	   for(int i=0;i<noofticket;i++)
+	   obj.concticket();
+	 }
+
+	if(proceedny=='n'||proceedny=='N')
+	 {
+	   obj.choice();
+	 }
+      }
+
+     if(proc=='N'||proc=='n')
+      {
+	obj.choice();
+      }
+   }
+
+  if(tcho==3)
+   {
+     clrscr();
+
+     cout<<"\n\t\t\t You chose Regular Ticket... \n Wanna proceed?(Y/N) : ";
+
+     char proc;
+     cin>>proc;
+
+     if(proc=='Y'||proc=='y')
+      {
+	clrscr();
+
+	cout<<"\n\t How many tickets do you want to book ? : ";
+
+	int noofticket;
+	cin>>noofticket;
+
+	cout<<"\n You want "<<noofticket<<" tickets...";
+
+	int sumticket;
+	sumticket=noofticket*1699;
+	cout<<"\n\n Total payable amount = Rs "<<sumticket;
+
+	cout<<"\n Proceed further ?(y/n) : ";
+
+	char proceedny;
+	cin>>proceedny;
+
+	if(proceedny=='y'||proceedny=='Y')
+	 {
+	   for(int i=0;i<noofticket;i++)
+	   obj.concticket();
+	 }
+
+	if(proceedny=='n'||proceedny=='N')
+	 {
+	   obj.choice();
+	 }
+      }
+
+     if(proc=='N'||proc=='n')
+      {
+	obj.choice();
+      }
+   }
+}
+
+void BMS::fileprocess()
+{ clrscr();
+
+  char fn[40],ln[40],pm[40],ph[40],st[40],ct[40],pc[40];
+  int hn;
+  cout<<"\n";
+  cout<<"================================================================================";
+  ofstream fout;
+  fout.open("BMS",ios::out);
+  cout<<"\nEnter your first name : ";
+  gets(fn);
+  cout<<"\nEnter your last name : ";
+  gets(ln);
+  cout<<"\nEnter your house number : ";
+  cin>>hn;
+  cout<<"\nEneter your placemark : ";
+  gets(pm);
+  cout<<"\nEnter your street/locality : ";
+  gets(st);
+  cout<<"\nEnter your city/town : ";
+  gets(ct);
+  cout<<"\nEnter your pincode : ";
+  gets(pc);
+  cout<<"\nEnter your phone number : ";
+  gets(ph);
+  fout.write((char*)&obj,sizeof (obj));
+  fout.close();
+
+  getch();
+  clrscr();
+  cout<<"\n";
+  cout<<"================================================================================";
+
+  ifstream fin;
+  fin.read((char*)&obj,sizeof (obj));
+  cout<<"\n";
+  cout<<"Your Details Are:-"<<"\n";
+  cout<<"First Name : ";
+  puts(fn);
+  cout<<"Last Name : ";
+  puts(ln); cout<<"\n";
+  cout<<"Address : "<<"\n";
+  cout<<hn<<"  ";
+  puts(pm); puts(st); puts(ct);
+  cout<<pc; cout<<"\n\n";
+  cout<<"Phone Number : ";
+  cout<<ph;
+  fin.close();
+
+  cout<<"\n\nIs this okay.....(Y/N) : ";
+
+  char okayornot;
+  cin>>okayornot;
+
+  if(okayornot=='y'||okayornot=='Y')
+   {
+     obj.finalticket();
+   }
+
+  if(okayornot=='n'||okayornot=='N')
+   {
+     clrscr();
+     obj.fileprocess();
+   }
+}
+
+
+void BMS::concticket()
+{ clrscr();
+
+  cout<<"\n";
+  cout<<"================================================================================";
+
+
+  char fn[40],ln[40],pm[40],ph[40],st[40],ct[40],pc[40];
+  int hn;
+
+  ofstream fout;
+  fout.open("BMS",ios::out);
+  cout<<"\nEnter your first name :";
+  gets(fn);
+  cout<<"\nEnter your last name :";
+  gets(ln);
+  cout<<"\nEnter your house number :";
+  cin>>hn;
+  cout<<"\nEnter your placemark :";
+  cin>>pm;
+  cout<<"\nEnter your street/locality :";
+  gets(st);
+  cout<<"\nEnter your city/town :";
+  gets(ct);
+  cout<<"\nEnter your pincode :";
+  gets(pc);
+  cout<<"\nEnter your phone number :";
+  gets(ph);
+  fout.write((char*)&obj,sizeof (obj));
+  fout.close();
+
+  getch();
+
+  clrscr();
+  cout<<"\n";
+  cout<<"================================================================================";
+
+  ifstream fin;
+  fin.read((char*)&obj,sizeof (obj));
+  cout<<"\n";
+  cout<<"Your Details Are:-"<<"\n";
+  cout<<"First Name:";
+  puts(fn);
+   cout<<"last Name:";
+  puts(ln);
+  cout<<"\n";
+  cout<<"Address:"<<"\n";
+  cout<<hn<<"  ";
+   puts(st); puts(ct);
+  cout<<pc; cout<<"\n\n";
+  cout<<"Phone Number:";
+  cout<<ph;
+  fin.close();
+
+  cout<<"\n\n Is this okay......Y/N) : ";
+
+  char okayornot;
+  cin>>okayornot;
+
+  if(okayornot=='y'||okayornot=='Y')
+   {
+     obj.finalticket();
+   }
+
+  if(okayornot=='n'||okayornot=='N')
+   {
+     clrscr();
+     obj.concticket();
+   }
+}
+void BMS::selseat()
+{
+   clrscr();
+
+   cout<<"\n";
+   cout<<"================================================================================";
+   cout<<"How many seats you wanna book ??? : ";
+
+   int nos;
+   cin>>nos;
+
+   getch();
+   clrscr();
+
+   cout<<"\n";
+   cout<<"              ---------------------------------------------------- "<<"\n\n\n";
+   cout<<"              |a1|  |a2|  |a3|  |a4|  |a5|  |a6|  |a7|  |a8|  |a9| "<<"\n\n";
+   cout<<"              |b1|  |b2|  |b3|  |b4|  |b5|  |b6|  |b7|  |b8|  |b9| "<<"\n\n";
+   cout<<"              |c1|  |c2|  |c3|  |c4|  |c5|  |c6|  |c7|  |c8|  |c9| "<<"\n\n";
+   cout<<"              |d1|  |d2|  |d3|  |d4|  |d5|  |d6|  |d7|  |d8|  |d9| "<<"\n\n";
+   cout<<"              |e1|  |e2|  |e3|  |e4|  |e5|  |e6|  |e7|  |e8|  |e9| "<<"\n\n";
+   cout<<"              |f1|  |f2|  |f3|  |f4|  |f5|  |f6|  |f7|  |f8|  |f9| "<<"\n\n";
+   cout<<"              |g1|  |g2|  |g3|  |g4|  |g5|  |g6|  |g7|  |g8|  |g9| "<<"\n\n";
+   cout<<"              |h1|  |h2|  |h3|  |h4|  |h5|  |h6|  |h7|  |h8|  |h9| "<<"\n\n";
+
+   cout<<"\n Choose the seat(s) you wanna book....... \n\n";
+
+   int ticketcost;
+
+   cout<<"\n";
+   cout<<"================================================================================";
+
+
+   for(int i=1;i<=nos;i++)
+    {
+     int z;
+     char r;
+
+     cout<<"Row : ";
+     cin>>r;
+     cout<<"Column :";
+     cin>>z;
+     cout<<"Seat : "<<r<<z<<"\n\n";
+    }
+
+   getch();
+   for(i=0;i<nos;i++)
+   obj.fileprocess();
+}
+
+
+void BMS::finalticket()
+{
+  clrscr();
+
+  cout<<"\n";
+  cout<<"================================================================================";
+  cout<<"  How would you like to get your ticket? \n";
+  cout<<"   1. On postal adress \n";
+  cout<<"   2. Walk in and grab your tickets \n";
+  cout<<"   3. Mail e-ticket on your email id \n";
+  cout<<"\n   Enter your choice : ";
+  int grabticket;
+  cin>>grabticket;
+
+  if(grabticket==1)
+  {
+     clrscr();
+
+     cout<<"\n";
+     cout<<"================================================================================";
+     cout<<" Your Ticket will be posted on the adress you provided."<<"\n\n";
+     cout<<" Thanks for booking ticket on BOOK MY SHOW! \n Have an amazing day!!";
+  }
+
+  if(grabticket==2)
+  {
+     clrscr();
+
+     cout<<"\n";
+     cout<<"================================================================================";
+     cout<<" Thanks for booking ticket on BOOK MY SHOW! \n Have an amazing day!!";
+  }
+
+  if(grabticket==3)
+  {
+     clrscr();
+
+     cout<<"\n";
+     cout<<"================================================================================";
+     cout<<"Please enter an email adress where your e-ticket will be posted with details provided. \n\n";
+
+     char email;
+     cin>>email;
+
+     cout<<"Your e-ticket will be sent shorty on the provided email adress \n\n";
+     getch();
+
+     clrscr();
+     cout<<"\n";
+     cout<<"================================================================================";
+     cout<<"Thank you for booking ticket on BOOK MY SHOW \nHave an amazing day!!";
+
+  }
+
+}
+
+
+void main()
+{
+ obj.welcome();
+
+ getch();
+}

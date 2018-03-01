@@ -1,0 +1,147 @@
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+#include<stdio.h>
+class bank
+{ 
+private:
+char name[20],type;
+int accno,balance;
+public:
+void getdata()
+{ 
+clrscr();
+cout<<"Enter accno:";
+cin>>accno;
+cout<<"Enter name:";
+gets(name);
+cout<<"Enter type of account (S/C):";
+cin>>type;
+cout<<"Enter balance:";
+cin>>balance;
+}
+void deposit()
+{ int x;
+cout<<"Enter amount to be deposited:";
+cin>>x;
+balance=balance+x;
+cout<<"Deposit successful."<<endl;
+}
+void withdraw()
+{ int x;
+cout<<"Enter amount to be withdraw:";
+cin>>x;
+balance=balance-x;
+cout<<"Withdraw successful."<<endl;
+}
+void display()
+{
+cout<<"Account number:"<<accno<<endl;
+cout<<"Name:"<<name<<endl;
+cout<<"Type of account:"<<type<<endl;
+cout<<"Balance:"<<balance<<endl;
+}
+int retaccno()
+{ return(accno);
+}
+int retbalance()
+{ return(balance);
+}
+//6
+};
+void main()
+{ clrscr();
+bank b[10];
+int op,i,search,check=1,n;
+while(1)
+{
+cout<<"1.Enter data."<<endl;
+cout<<"2.Deposit."<<endl;
+cout<<"3.Withdraw."<<endl;
+cout<<"4.Display."<<endl;
+cout<<"5.Exit."<<endl;
+cout<<"Enter your option:";
+cin>>op;
+clrscr();
+switch(op)
+{ case 1:
+cout<<"Enter number of enteries (max 10) :";
+cin>>n;
+for(i=0;i<n;i++)
+{
+b[i].getdata();
+cout<<"Press any key to continue.....";
+getch();
+clrscr();
+}
+break;
+case 2:
+cout<<"Enter accno to be deposited with:";
+cin>>search;
+for(i=0;i<n;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+b[i].deposit();
+check=0;
+}
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 3:
+cout<<"Enter accno to be withdraw with:";
+cin>>search;
+for(i=0;i<n;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+if(b[i].retbalance()<1000)
+//7
+{
+cout<<"Withdrawal not possible."<<endl;
+check=0;
+break;
+}
+else
+b[i].withdraw();
+check=0;
+}
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 4:
+cout<<"Enter accno to display:";
+cin>>search;
+for(i=0;i<10;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+check=0;
+break;
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 5:exit(0);
+break;
+default:cout<<"Wrong option."<<endl;
+cout<<"Enter again."<<endl;
+}
+}
+getch();
+}

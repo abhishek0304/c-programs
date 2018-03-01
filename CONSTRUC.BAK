@@ -1,0 +1,33 @@
+#include<iostream.h>
+#include<conio.h>
+class test{
+int a;
+char b;
+public:
+/*test()
+{
+cout<<"Default constructor is called here "<<"\n";
+}
+*/
+test()
+{
+}
+test(int i,char j)
+{
+a=i;
+b=j;
+cout<<"Constructor with arguments called"<<"\n";
+}
+cout<<a<<"\n";
+cout<<b<<"\n";
+
+};
+void main()
+{
+clrscr();
+test t1(4,'a');
+test t2(t1);
+test t3=t1;
+t4=t1;
+getch();
+}

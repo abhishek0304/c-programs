@@ -1,0 +1,61 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+class publisher
+{
+   long int id;
+   char title[40];
+   char author[40];
+   double price,stockqty;
+   double stockvalue;
+   void valcal()
+   {
+   stockvalue=price*stockqty;
+   }
+public : void enter()
+{
+
+	 cout<<"Id no.: ";
+	 cin>>id;
+	 cout<<"Title : ";
+	 gets(title);
+	 cout<<"Author : ";
+	 gets(author);
+	 cout<<"Enter stockqty : ";
+	 cin>>stockqty;
+
+}
+	 void takestock(int n)
+{
+	 stockqty+=n;
+	 valcal();
+}
+	 void sale(int n)
+{
+	 stockqty-=n;
+	 valcal();
+}
+	 void outdata()
+{
+	 cout<<id<<" ";
+	 cout<<title<<" ";
+	 cout<<author<<" ";
+	 cout<<price<<" ";
+	 cout<<stockqty<<" ";
+	 cout<<stockvalue<<" ";
+}
+};
+void main()
+{
+clrscr();
+int n;
+publisher p;
+p.enter();
+cout<<"Enter n : ";
+cin>>n;
+p.enter();
+p.takestock(n);
+p.sale(n);
+p.outdata();
+getch();
+}

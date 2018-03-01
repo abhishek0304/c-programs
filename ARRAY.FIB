@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int b[100],i;
+clrscr();
+b[0]=1;
+b[1]=1;
+for(i=2;i<=9;i++)
+b[i]=b[i-1]+b[i-2];
+for(i=0;i<9;i++)
+printf("%d ",b[i]);
+getch();
+}
