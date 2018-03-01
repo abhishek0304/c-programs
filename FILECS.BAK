@@ -1,0 +1,334 @@
+//reverse
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<process.h>
+char s1[100],s2[100],s3[200],temp;
+int i,j,count=0;
+void reverse()
+{
+cout<<"Enter String:";
+gets(s1);
+for(i=0;s1[i]!='\0';i++)
+{ count++;
+}
+for(i=0,j=count-1 ; i<count/2 ;i++,j--)
+{ temp=s1[i];
+s1[i]=s1[j];
+s1[j]=temp;
+}
+cout<<"Reverse string is:"<<s1<<endl;
+}
+void copy()
+{ cout<<"Enter string:";
+gets(s1);
+for(i=0;s1[i]!='\0';i++)
+{ s3[i]=s1[i];
+}
+s3[i]='\0';
+cout<<"The copied string is:"<<s3<<endl;
+}
+void concatenate()
+{ cout<<"Enter first string:";
+gets(s1);
+cout<<"Enter second string:";
+gets(s2);
+for(i=0;s1[i]!='\0';++i)
+{ s3[i]=s1[i];
+}
+for(j=0;s2[j]!='\0';++j)
+{ s3[i+j]=s2[j];
+}
+s3[i+j]='\0';
+cout<<"The concatenated string is:"<<s3<<endl;
+}
+//2
+void countalphabets()
+{ int c=0;
+cout<<"Enter string:";
+gets(s1);
+for(i=0;s1[i]!='\0';i++)
+{ if(s1[i]>='a'&& s1[i]<='z'||s1[i]>='A'&& s1[i]<='Z')
+c++;
+}
+cout<<"The total number of alphabets in string is:"<<c<<endl;
+}
+void main()
+{
+clrscr();
+int op,temp,i,j;
+char s1[100],s2[100],s3[200]={0};
+while(1)
+{ cout<<"String functions:"<<endl;
+cout<<"1.Reverse a string."<<endl;
+cout<<"2.Copy a string into empty string."<<endl;
+cout<<"3.Concatenate two strings."<<endl;
+cout<<"4.Count number of alphabets in string."<<endl;
+cout<<"5.Exit."<<endl;
+cout<<"Enter your choice:";
+cin>>op;
+clrscr();
+switch(op)
+{ case 1: reverse();
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 2:copy();
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 3:concatenate();
+cout<<"Press any key to continue...."<<endl;
+getch();
+clrscr();
+break;
+case 4:countalphabets();
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 5:exit(0);
+break;
+//3
+default:cout<<"Wrong option entered."<<endl;
+cout<<"Please enter again."<<endl;
+}
+}
+getch();
+}
+/*
+// option 1 5
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+#include<stdio.h>
+#include<process.h>
+#include<string.h>
+void main()
+{ clrscr();
+while(1)
+{
+ofstream fout;
+ifstream fin;
+char st[80],ans='y';
+int op,count=0;
+cout<<"Welcome"<<endl;
+cout<<"1. Enter notes."<<endl;
+cout<<"2. Count no. of alphabets."<<endl;
+cout<<"3. Count no. of lines."<<endl;
+cout<<"4. Count no. of words."<<endl;
+cout<<"5. To count no. of presence of any word."<<endl;
+cout<<"6. Exit."<<endl;
+cout<<"Enter your option:";
+cin>>op;
+clrscr();
+switch(op)
+{ case 1: fout.open("notes.txt",ios::out);
+if(!fout)
+{ cout<<"File does not exist.";
+exit(0);
+break;
+}
+while(ans=='y'||ans=='Y')
+{ cout<<"Enter String:";
+gets(st);
+fout<<st<<endl;
+cout<<"Do you want to enter more? (y/n):";
+cin>>ans;
+}
+fout.close();
+cout<<"Press any button to continue..."<<endl;
+getch();
+clrscr();
+break;
+case 2: char ch,i;
+fin.open("notes.txt", ios::in);
+20
+while(fin)
+{ fin.get(ch);
+if(fin.eof())
+break;
+i=ch;
+if(i>='a'&&i<='z'||i>='A'&&i<='Z')
+count++;
+}
+fin.close();
+cout<<"There are "<<count<<" alphabets in notes."<<endl;
+cout<<"Press any button to continue..."<<endl;
+getch();
+clrscr();
+break;
+case 3: char line[80];
+fin.open("notes.txt", ios::in);
+while(fin)
+{ fin.getline(line,80);
+if(fin.eof())
+break;
+count++;
+}
+fin.close();
+cout<<"There are "<<count<<" lines in notes."<<endl;
+cout<<"Press any button to continue..."<<endl;
+getch();
+clrscr();
+break;
+case 4: char st[20];
+fin.open("notes.txt", ios::in);
+while(fin)
+{ fin>>st;
+if(fin.eof())
+break;
+count++;
+}
+fin.close();
+cout<<"There are "<<count<<" words in notes."<<endl;
+cout<<"Press any button to continue..."<<endl;
+getch();
+clrscr();
+break;
+case 5: char search[20];
+cout<<"Enter the word to be searched:";
+gets(search);
+fin.open("notes.txt", ios::in);
+while(fin)
+{ fin>>st;
+21
+if(fin.eof())
+break;
+else if(strcmpi(search,st)==0)
+count++;
+}
+fin.close();
+cout<<"There are "<<count<<" occurences of entered word."<<endl;
+cout<<"Press any button to continue..."<<endl;
+getch();
+clrscr();
+break;
+case 6: exit(0);
+break;
+default: cout<<"Wrong option, please enter again."<<endl;
+}
+}
+getch();
+clrscr();
+break;
+case 3:concatenate();
+cout<<"Press any key to continue...."<<endl;
+getch();
+clrscr();
+break;
+case 4:countalphabets();
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 5:exit(0);
+break;
+3
+default:cout<<"Wrong option entered."<<endl;
+cout<<"Please enter again."<<endl;
+}
+}
+getch();
+}
+
+
+
+//bank   option 1 2 3 4
+void main()
+{ clrscr();
+bank b[10];
+int op,i,search,check=1,n;
+while(1)
+{
+cout<<"1.Enter data."<<endl;
+cout<<"2.Deposit."<<endl;
+cout<<"3.Withdraw."<<endl;
+cout<<"4.Display."<<endl;
+cout<<"5.Exit."<<endl;
+cout<<"Enter your option:";
+cin>>op;
+clrscr();
+switch(op)
+{ case 1:
+cout<<"Enter number of enteries (max 10) :";
+cin>>n;
+for(i=0;i<n;i++)
+b[i].getdata();
+cout<<"Press any key to continue.....";
+getch();
+clrscr();
+break;
+case 2:
+cout<<"Enter accno to be deposited with:";
+cin>>search;
+for(i=0;i<n;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+b[i].deposit();
+check=0;
+}
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 3:
+cout<<"Enter accno to be withdraw with:";
+cin>>search;
+for(i=0;i<n;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+if(b[i].retbalance()<1000)
+7
+{
+cout<<"Withdrawal not possible."<<endl;
+check=0;
+break;
+}
+else
+b[i].withdraw();
+check=0;
+}
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 4:
+cout<<"Enter accno to display:";
+cin>>search;
+for(i=0;i<10;i++)
+{ if(b[i].retaccno()==search)
+{ b[i].display();
+check=0;
+break;
+}
+if(check==1)
+{
+cout<<"Accno does not exist"<<endl;
+}
+}
+cout<<"Press any key to continue....."<<endl;
+getch();
+clrscr();
+break;
+case 5:exit(0);
+break;
+default:cout<<"Wrong option."<<endl;
+cout<<"Enter again."<<endl;
+}
+}
+getch();
+}
+*/
